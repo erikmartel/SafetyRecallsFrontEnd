@@ -1,0 +1,15 @@
+.recallCard{
+	border: 2px solid black;
+	margin: 5px;
+	padding: 5px;
+}
+
+.cardTitle{
+	color: #1A1446;
+	font-size: medium;
+	font-style: bolder;
+}
+
+.cardLink{
+	color: #06748C;
+}

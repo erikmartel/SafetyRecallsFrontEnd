@@ -1,21 +1,22 @@
 import './App.css';
+import Header from './components/header/header';
+import Checker from './components/checker/checker';
+
+import RecallCard from './components/recallCard/recallCard';
+
 
 function App() {
   return (
     <div className="App">
-     
+      <Header />
 
       <div className="appContainer">
-      <header className="appHeader">
-        <h1 className="appTitle">Safety Recall Checker</h1>
-      </header>
-        <div className= "checkerContainer">
-          
-            <label className="driverSelectorLabel" for="driverSelector">Who's driving?</label>
-            <select className='driverSelectorDropdown' id="driverSelector">Who's driving?</select>
-            <button color = "#1AFFFF" className="recallSubmitButton">Check my recalls</button>
-          
-        </div>
+      <Checker />
+      </div>
+
+      <div className="recallListContainer">
+      <RecallCard />
+        
       </div>
     </div>
   );

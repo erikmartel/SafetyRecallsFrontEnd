@@ -49,3 +49,12 @@
 	border-color: #06748C;
 	border-radius: 5px;
 }
+
+.recallListContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:space-around;
+	margin: 10px;
+	border: 2px solid black;
+}

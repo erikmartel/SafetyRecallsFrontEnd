@@ -1,0 +1,20 @@
+.driverSelectorLabel{
+	padding: 2px;
+	color: #1A1446;
+	font-size: medium;
+	font-style: bolder;
+	display:flex;
+	justify-content: center;
+}
+
+.driverSelectorDropdown{
+	margin-bottom: 3px;
+	border-radius: 3px;
+}
+
+.recallSubmitButton {
+	margin:15px;
+	background-color:#1AFFFF;
+	border-color: #06748C;
+	border-radius: 5px;
+}
