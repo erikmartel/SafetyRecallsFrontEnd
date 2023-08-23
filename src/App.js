@@ -20,6 +20,8 @@ function App() {
       .catch((error) => setError(true));
   }, []);
 
+  
+
   console.log(data);
 
   return (
