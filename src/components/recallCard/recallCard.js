@@ -13,12 +13,12 @@ function RecallCard ({data}) {
             <div>
              <CCard key={data.NHTSACampaignNumber} className="recallCard" style={{ width: 'auto' }}>
               <CCardBody>
-                  <CCardTitle className="cardTitle">{data.ModelYear} {data.Make} {data.Model}</CCardTitle> 
-                    <CCardSubtitle className="mb-2 text-medium-emphasis">{data.Component}</CCardSubtitle>
+                  <CCardTitle className="cardTitle">Vehicle: {data.ModelYear} {data.Make} {data.Model}</CCardTitle> 
+                    <CCardSubtitle className="mb-2 text-medium-emphasis">Component: {data.Component}</CCardSubtitle>
                       <CCardText>
-                      {data.Summary}
+                      Summary: {data.Summary}
                       </CCardText>
-                    <CCardLink className="cardLink" href="#">Card link</CCardLink>
+                    <CCardLink className="cardLink" href="#">More Details</CCardLink>
               
               </CCardBody>
               </CCard>
