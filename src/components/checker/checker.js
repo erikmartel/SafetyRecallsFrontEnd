@@ -1,12 +1,36 @@
 import './checker.css'
+import { useState } from 'react';
+function Checker ({drivers}) {
 
-function Checker () {
+
+const [driver, setDriver] = useState([])
+console.log(drivers);
+
+const handleChange = (event) => {
+    setDriver(event.target.value);
+  };
 
 return (
 <div className= "checkerContainer">
           
           <label className="driverSelectorLabel" for="driverSelector">Who's driving?</label>
-          <select className='driverSelectorDropdown' id="driverSelector">Who's driving?</select>
+          
+          
+        <form className="driverSelectorDropdown" id="driverSelector">
+            <select placeholder="Who's driving?" onChange={handleChange}>
+                <option disabled="">Select your driver</option>
+                {
+                drivers?.map((driver) => (
+                    <option key={driver.first_name}>{driver.first_name} {driver.last_name}</option>
+                ))}
+            </select>
+        </form>
+          
+          
+          
+          
+          
+          
           <button color = "#1AFFFF" className="recallSubmitButton">Check my recalls</button>
   
 </div>

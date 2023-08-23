@@ -8,6 +8,7 @@ import React from "react";
 function App() {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
+  const [drivers, setDrivers] = useState([])
 
   useEffect(() => {
     const url = `https://api.nhtsa.gov/recalls/recallsByVehicle?make=jeep&model=wrangler&modelYear=2023`;
@@ -21,7 +22,18 @@ function App() {
   }, []);
 
   
+  useEffect(() => {
+    const driversUrl = `http://localhost:4000/api/drivers`;
+    fetch(driversUrl)
+      .then((response) => response.json())
+      .then((drivers) => {
+        setError(false);
+        setDrivers(drivers);
+      })
+      .catch((error) => setError(true));
+  }, []);
 
+  console.log(drivers);
   console.log(data);
 
   return (
@@ -29,7 +41,7 @@ function App() {
       <Header />
 
       <div className="appContainer">
-        <Checker />
+        <Checker drivers={drivers}/>
       </div>
 
       <div className="recallListContainer">
