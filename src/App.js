@@ -11,7 +11,7 @@ function App() {
   const [error, setError] = useState(false);
   const [drivers, setDrivers] = useState([])
 
-  useEffect(() => {
+/*   useEffect(() => {
     const url = `https://api.nhtsa.gov/recalls/recallsByVehicle?make=jeep&model=wrangler&modelYear=2023`;
     fetch(url)
       .then((response) => response.json())
@@ -20,7 +20,7 @@ function App() {
         setData(data);
       })
       .catch((error) => setError(true));
-  }, []);
+  }, []);  */
 
   
   useEffect(() => {
@@ -47,9 +47,7 @@ function App() {
       
       </div>
 
-      <div className="recallListContainer">
-        <RecallCard data={data.results ? data.results : []} />
-      </div>
+
       <div className="recallData"></div>
     </div>
   );

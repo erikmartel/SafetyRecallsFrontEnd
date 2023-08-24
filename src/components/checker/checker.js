@@ -1,7 +1,7 @@
 import "./checker.css";
 import { useState, useEffect } from "react";
-import { CCard, CCardBody, CCardLink, CCardSubtitle, CCardText, CCardTitle } from '@coreui/react';
-
+import { CCard, CCardBody,CButton, CCardLink, CCardSubtitle, CCardText, CCardTitle } from '@coreui/react';
+import RecallCard from "../recallCard/recallCard";
 // import VehicleCard from "../vehicleCard/vehicleCard";
 
 function Checker({ drivers }) {
@@ -10,10 +10,13 @@ function Checker({ drivers }) {
   const [driverInfo, setDriverInfo] = useState(null);
   const [selectedVehicle, setSelectedVehicle] = useState('');
   const [recallInfo, setRecallInfo] = useState('');
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(false);
+  const [vehicleRecallData, setVehicleRecallData]=useState([])
 
-  console.log(drivers);
+  //console.log(drivers);
 
-console.log(driver);
+//console.log(driver);
 
   useEffect(() => {
     if (driver) {
@@ -34,15 +37,33 @@ console.log(driver);
     }
   }, [driver]);
 
-// console.log(driverInfo.Vehicles);
+//console.log(driverInfo.Vehicles.make);
 
   //Handling dropdown selection
   const handleChange = (event) => {
     setDriver(event.target.value);
-    console.log(event.target.value)
+   // console.log(event.target.value)
   };
 
+
+//handle recall click
+function checkRecallsClick(index){
+  console.log(driverInfo.Vehicles[index]);
+  const vehicle = driverInfo.Vehicles[index]
+  const url = `https://api.nhtsa.gov/recalls/recallsByVehicle?make=${vehicle.make}&model=${vehicle.model}&modelYear=${vehicle.modelYear}`;
+  fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    setError(false);
+    setVehicleRecallData(data);
+    console.log(data);
+  })
+  .catch((error) => setError(true));
+}
   
+
+
+
 //Mapping driver names to dropdown from MongoDB
 
 
@@ -57,7 +78,7 @@ console.log(driver);
           <option disabled="">Select your driver</option>
           {drivers?.map((driver) => (
             <option key={driver.first_name} value={driver._id}>
-              {driver.first_name}
+              {driver.first_name} {driver.last_name}
             </option>
           ))}
         </select>
@@ -75,7 +96,7 @@ console.log(driver);
              <CCard className="vehicleCard" style={{ width: 'auto' }}>
               <CCardBody>
                   <CCardTitle className="cardTitle">Vehicle: {vehicle.modelYear} {vehicle.make} {vehicle.model}</CCardTitle>
-              
+              <CButton href="" className="recallSubmitButton" onClick={() => checkRecallsClick(index)}>Check for Recalls</CButton>
               </CCardBody>
               </CCard>
           </div>
@@ -87,9 +108,9 @@ console.log(driver);
 
 
 
-      <button color="#1AFFFF" className="recallSubmitButton">
-        Check my recalls
-      </button>
+        <div className="recallListContainer">
+        <RecallCard data={vehicleRecallData.results ? vehicleRecallData.results : []} />
+      </div>
     </div>
   );
 }
