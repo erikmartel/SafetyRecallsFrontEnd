@@ -3,6 +3,7 @@ import Header from "./components/header/header";
 import Checker from "./components/checker/checker";
 import { useState, useEffect } from "react";
 import RecallCard from "./components/recallCard/recallCard";
+import VehicleCard from "./components/vehicleCard/vehicleCard";
 import React from "react";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
 
       <div className="appContainer">
         <Checker drivers={drivers}/>
+      
       </div>
 
       <div className="recallListContainer">
