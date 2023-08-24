@@ -8,10 +8,10 @@ function RecallCard ({data}) {
         <>
       <><div>
       {
-         data.map(data=>{
+         data.map((data)=>{
           return(
-            <div>
-             <CCard key={data.NHTSACampaignNumber} className="recallCard" style={{ width: 'auto' }}>
+            <div key={data.NHTSACampaignNumber}>
+             <CCard  className="recallCard" style={{ width: 'auto' }}>
               <CCardBody>
                   <CCardTitle className="cardTitle">Vehicle: {data.ModelYear} {data.Make} {data.Model}</CCardTitle> 
                     <CCardSubtitle className="mb-2 text-medium-emphasis">Component: {data.Component}</CCardSubtitle>

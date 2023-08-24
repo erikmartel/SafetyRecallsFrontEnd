@@ -28,13 +28,14 @@ function App() {
     fetch(driversUrl)
       .then((response) => response.json())
       .then((drivers) => {
+        console.log(drivers);
         setError(false);
         setDrivers(drivers);
       })
       .catch((error) => setError(true));
   }, []);
 
-  console.log(drivers);
+
   console.log(data);
 
   return (
