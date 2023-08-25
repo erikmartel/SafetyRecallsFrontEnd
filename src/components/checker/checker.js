@@ -88,31 +88,34 @@ function checkRecallsClick(index){
       {driver ? <label>Your vehicles:</label> : null}
 
       <>
-      <><div>
+      <>
+      {/* <div> */}
       {
          driverInfo?.Vehicles.map((vehicle, index)=>{
           return(
-            <div key={index}>
-             <CCard className="vehicleCard" style={{ width: 'auto' }}>
+            <div  class="vehicleCard" key={index}>
+              <div class="vehicleContainer">
+             {/* <CCard className="vehicleCard" style={{ width: 'auto' }}> */}
               <CCardBody>
                   <CCardTitle className="cardTitle">Vehicle: {vehicle.modelYear} {vehicle.make} {vehicle.model}</CCardTitle>
               <CButton href="" className="recallSubmitButton" onClick={() => checkRecallsClick(index)}>Check for Recalls</CButton>
               </CCardBody>
-              </CCard>
+              {/* </CCard> */}
+              </div>
           </div>
           )
         })
       }
-        </div></></>
-
-
-
-
+        {/* </div> */}
+        </>
+        </>
         <div className="recallListContainer">
-        <RecallCard data={vehicleRecallData.results ? vehicleRecallData.results : []} />
-      </div>
+            <RecallCard data={vehicleRecallData.results ? vehicleRecallData.results : []} />
+          </div> 
     </div>
-  );
+       
+    );
+  
 }
 
 export default Checker;

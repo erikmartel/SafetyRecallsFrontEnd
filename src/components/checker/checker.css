@@ -13,8 +13,42 @@
 }
 
 .recallSubmitButton {
-	margin:15px;
-	background-color:#1AFFFF;
-	border-color: #06748C;
-	border-radius: 5px;
-}
+	padding: 10px 15px;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #1A1446;
+	background-color: #1AFFFF;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 3px #999;
+  }
+  
+  .recallSubmitButton:hover {background-color: #06748C}
+  
+  .recallSubmitButton:active {
+	background-color: #3e8e41;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+  }
+
+.vehicleCard {
+	/* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	transition: 0.3s;
+	border-radius: 10px; /* 5px rounded corners */
+	max-width: 50%;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .vehicleCard:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .vehicleContainer {
+	padding: 2px 16px;
+	margin: 10px;
+  }
+
