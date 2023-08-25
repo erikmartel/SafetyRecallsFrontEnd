@@ -87,24 +87,22 @@ function checkRecallsClick(index){
      {/*  {Show vehicles once driver is selected } */}
       {driver ? <label>Your vehicles:</label> : null}
 
-      <>
-      <>
-      {/* <div> */}
-      {
-         driverInfo?.Vehicles.map((vehicle, index)=>{
-          return(
-            <div  class="vehicleCard" key={index}>
-              <div class="vehicleContainer">
-                <h3 className="cardTitle">{vehicle.modelYear} {vehicle.make} {vehicle.model}</h3>
-                <button className="recallSubmitButton" onClick={() => checkRecallsClick(index)}>Check for Recalls</button>
+  
+      <div className='vehicleCardsGrid' > 
+          {
+            driverInfo?.Vehicles.map((vehicle, index)=>{
+              return(
+                <div  class="vehicleCard" key={index}>
+                  <div class="vehicleContainer">
+                    <h3 className="cardTitle">{vehicle.modelYear} {vehicle.make} {vehicle.model}</h3>
+                    <button className="recallSubmitButton" onClick={() => checkRecallsClick(index)}>Check for Recalls</button>
+                  </div>
               </div>
-          </div>
-          )
-        })
-      }
-        {/* </div> */}
-        </>
-        </>
+              )
+            })
+          }
+      </div> 
+    
         <div className="recallListContainer">
             <RecallCard data={vehicleRecallData.results ? vehicleRecallData.results : []} />
           </div> 

@@ -1,7 +1,6 @@
 .checkerContainer{
 	display: flex;
 	flex-direction:column;
-	justify-content: center;
 	align-items: center;
 }
 
@@ -41,6 +40,15 @@
 	transform: translateY(4px);
   }
 
+  .recallListContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:space-around;
+	margin: 10px;
+	width: 80%;
+}
+  
 .vehicleCard {
 
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -63,3 +71,10 @@
 	justify-content: center;
   }
 
+  .vehicleCardsGrid{
+	display:flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-evenly;
+	width: 95%;
+}

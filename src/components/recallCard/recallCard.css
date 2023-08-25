@@ -2,11 +2,18 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items:center;
+
+
 }
 
 .recallCard{
 	margin: 5px;
 	padding: 5px;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	width:50%;
 }
 
 .cardTitle{
