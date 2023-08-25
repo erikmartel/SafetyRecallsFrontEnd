@@ -41,7 +41,7 @@ function Checker({ drivers }) {
   //Handling dropdown selection
   const handleChange = (event) => {
     setDriver(event.target.value);
-   // console.log(event.target.value)
+    setVehicleRecallData([]);
   };
 
 
@@ -85,10 +85,10 @@ function checkRecallsClick(index){
       
       
      {/*  {Show vehicles once driver is selected } */}
-      {driver ? <label>Your vehicles:</label> : null}
+      {driver ? <label className="yourVehiclesLabel">Your vehicles:</label> : null}
 
   
-      <div className='vehicleCardsGrid' > 
+      <div className='vehicleCardsGrid'> 
           {
             driverInfo?.Vehicles.map((vehicle, index)=>{
               return(

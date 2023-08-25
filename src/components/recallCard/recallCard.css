@@ -13,15 +13,24 @@
 	display:flex;
 	flex-direction: column;
 	justify-content: center;
-	width:50%;
+	width:auto;
+	border-bottom:#1A1446 solid 1px;
 }
 
 .cardTitle{
 	color: #1A1446;
 	font-size: medium;
 	font-style: bolder;
+	margin-block: 0.1em;
 }
 
 .cardLink{
 	color: #06748C;
 }
+
+.componentInfo{
+	margin-block-end: 0.1em;
+	font-size:medium;
+	color:rgb(129, 48, 48);
+}
+
