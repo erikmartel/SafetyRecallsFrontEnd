@@ -1,7 +1,7 @@
 .driverSelectorLabel{
 	padding: 2px;
 	color: #1A1446;
-	font-size: medium;
+	font-size: large;
 	font-style: bolder;
 	display:flex;
 	justify-content: center;
@@ -13,6 +13,7 @@
 }
 
 .recallSubmitButton {
+<<<<<<< HEAD
 	padding: 10px 15px;
 	font-size: 14px;
 	text-align: center;
@@ -52,3 +53,17 @@
 	margin: 10px;
   }
 
+=======
+	margin:15px;
+	background-color:#1AFFFF;
+	border-color: #06748C;
+	border-radius: 5px;
+}
+
+.checkerContainer{
+	width: 100%;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+}
+>>>>>>> f1d77b2b5cc4f434c8586c3de0bc410564fb51ad
