@@ -1,3 +1,9 @@
+.recallCardContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 .recallCard{
 	margin: 5px;
 	padding: 5px;

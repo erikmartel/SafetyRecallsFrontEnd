@@ -1,6 +1,5 @@
 import "./checker.css";
 import { useState, useEffect } from "react";
-import { CCard, CCardBody,CButton, CCardLink, CCardSubtitle, CCardText, CCardTitle } from '@coreui/react';
 import RecallCard from "../recallCard/recallCard";
 // import VehicleCard from "../vehicleCard/vehicleCard";
 
@@ -84,6 +83,7 @@ function checkRecallsClick(index){
         </select>
       </form>
       
+      
      {/*  {Show vehicles once driver is selected } */}
       {driver ? <label>Your vehicles:</label> : null}
 
@@ -95,12 +95,8 @@ function checkRecallsClick(index){
           return(
             <div  class="vehicleCard" key={index}>
               <div class="vehicleContainer">
-             {/* <CCard className="vehicleCard" style={{ width: 'auto' }}> */}
-              <CCardBody>
-                  <CCardTitle className="cardTitle">Vehicle: {vehicle.modelYear} {vehicle.make} {vehicle.model}</CCardTitle>
-              <CButton href="" className="recallSubmitButton" onClick={() => checkRecallsClick(index)}>Check for Recalls</CButton>
-              </CCardBody>
-              {/* </CCard> */}
+                <h3 className="cardTitle">{vehicle.modelYear} {vehicle.make} {vehicle.model}</h3>
+                <button className="recallSubmitButton" onClick={() => checkRecallsClick(index)}>Check for Recalls</button>
               </div>
           </div>
           )

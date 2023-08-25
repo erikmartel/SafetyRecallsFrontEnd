@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
-/*-------------------------------------------------------------------------*/
+
 *{
 	font-family: roboto;
 
@@ -29,12 +29,12 @@
 
 }
 
-.checkerContainer{
+/* .checkerContainer{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-}
-
+} */
+/* 
 .driverSelectorLabel{
 	padding: 2px;
 	color: #1A1446;
@@ -42,19 +42,19 @@
 	font-style: bolder;
 	display:flex;
 	justify-content: center;
-}
+} */
 
-.driverSelectorDropdown{
+/* .driverSelectorDropdown{
 	margin-bottom: 3px;
 
-}
+} */
 
-.recallSubmitButton {
+/* .recallSubmitButton {
 	margin:15px;
 	background-color:#1AFFFF;
 	border-color: #06748C;
 	border-radius: 5px;
-}
+} */
 
 .recallListContainer {
 	display: flex;
