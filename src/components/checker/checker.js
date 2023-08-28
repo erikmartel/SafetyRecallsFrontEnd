@@ -40,8 +40,10 @@ function Checker({ drivers }) {
 
   //Handling dropdown selection
   const handleChange = (event) => {
-    setDriver(event.target.value);
-    setVehicleRecallData([]);
+      setDriver(event.target.value);
+      setVehicleRecallData([]);
+    console.log(driver);
+    console.log(event.target.value)
   };
 
 
@@ -74,7 +76,7 @@ function checkRecallsClick(index){
 
       <form className="driverSelectorDropdown" id="driverSelector">
         <select placeholder="Who's driving?" onChange={handleChange}>
-          <option disabled="">Select your driver</option>
+          <option value="">Select your driver</option>
           {drivers?.map((driver) => (
             <option key={driver.first_name} value={driver._id}>
               {driver.first_name} {driver.last_name}
@@ -88,7 +90,7 @@ function checkRecallsClick(index){
       {driver ? <label className="yourVehiclesLabel">Your vehicles:</label> : null}
 
   
-      <div className='vehicleCardsGrid'> 
+      {driver ? <div className='vehicleCardsGrid'> 
           {
             driverInfo?.Vehicles.map((vehicle, index)=>{
               return(
@@ -101,7 +103,7 @@ function checkRecallsClick(index){
               )
             })
           }
-      </div> 
+      </div> : <div></div>}
     
         <div className="recallListContainer">
             <RecallCard data={vehicleRecallData.results ? vehicleRecallData.results : []} />
