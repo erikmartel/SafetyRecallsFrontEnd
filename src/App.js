@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/header/header";
 import Checker from "./components/checker/checker";
 import { useState, useEffect } from "react";
-import RecallCard from "./components/recallCard/recallCard";
+
 import React from "react";
 
 function App() {
