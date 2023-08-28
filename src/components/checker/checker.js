@@ -1,15 +1,11 @@
 import "./checker.css";
 import { useState, useEffect } from "react";
 import RecallCard from "../recallCard/recallCard";
-// import VehicleCard from "../vehicleCard/vehicleCard";
 
 function Checker({ drivers }) {
   const [driver, setDriver] = useState(null);
 
   const [driverInfo, setDriverInfo] = useState(null);
-  const [selectedVehicle, setSelectedVehicle] = useState('');
-  const [recallInfo, setRecallInfo] = useState('');
-  const [data, setData] = useState([]);
   const [error, setError] = useState(false);
   const [vehicleRecallData, setVehicleRecallData]=useState([])
 
@@ -75,8 +71,8 @@ function checkRecallsClick(index){
       </label>
 
       <form className="driverSelectorDropdown" id="driverSelector">
-        <select placeholder="Who's driving?" onChange={handleChange}>
-          <option value="">Select your driver</option>
+        <select className="dropdown" placeholder="Who's driving?" onChange={handleChange}>
+          <option value="">-- Select your driver --</option>
           {drivers?.map((driver) => (
             <option key={driver.first_name} value={driver._id}>
               {driver.first_name} {driver.last_name}
@@ -97,6 +93,7 @@ function checkRecallsClick(index){
                 <div  class="vehicleCard" key={index}>
                   <div class="vehicleContainer">
                     <h3 className="cardTitle">{vehicle.modelYear} {vehicle.make} {vehicle.model}</h3>
+                    <img className="carIcon" alt="carIcon" src="https://cdn-icons-png.flaticon.com/512/2555/2555013.png"></img>
                     <button className="recallSubmitButton" onClick={() => checkRecallsClick(index)}>Check for Recalls</button>
                   </div>
               </div>
