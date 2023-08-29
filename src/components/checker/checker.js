@@ -93,7 +93,9 @@ function checkRecallsClick(index){
                 <div  class="vehicleCard" key={index}>
                   <div class="vehicleContainer">
                     <h3 className="cardTitle">{vehicle.modelYear} {vehicle.make} {vehicle.model}</h3>
-                    <img className="carIcon" alt="carIcon" src="https://cdn-icons-png.flaticon.com/512/2555/2555013.png"></img>
+                    <div>
+                    <img src="/images/carIcon.png" alt="carIcon" />
+                    </div>
                     <button className="recallSubmitButton" onClick={() => checkRecallsClick(index)}>Check for Recalls</button>
                   </div>
               </div>
