@@ -88,7 +88,7 @@ function handleNewDriver(){
           ))}
         </select>
       </form>
-      <div><button className="addDriverButton" onClick={handleNewDriver}>{addNewDriver ? "Cancel" : "Add Driver"}</button></div>
+      <div><button className="addDriverButton" onClick={handleNewDriver}>{addNewDriver ? "Close Form" : "Add Driver"}</button></div>
       
       
      {/*  {Show vehicles once driver is selected } */}
