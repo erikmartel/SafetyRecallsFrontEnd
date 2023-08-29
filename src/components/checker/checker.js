@@ -3,18 +3,31 @@ import { useState, useEffect } from "react";
 import RecallCard from "../recallCard/recallCard";
 import Form from "../form/form";
 
-function Checker({ drivers }) {
+function Checker() {
   const [driver, setDriver] = useState(null);
   const [driverInfo, setDriverInfo] = useState(null);
   const [vehicleRecallData, setVehicleRecallData]=useState([]);
   const [addNewDriver, setAddNewDriver] = useState(false);
   const [error, setError] = useState(false);
+  const [drivers, setDrivers] = useState([])
 
-
+  //fetching all drivers from local database
+  useEffect(() => {
+    const driversUrl = `http://localhost:4000/api/drivers`;
+    fetch(driversUrl)
+      .then((response) => response.json())
+      .then((drivers) => {
+        console.log(drivers);
+        setError(false);
+        setDrivers(drivers);
+      })
+      .catch((error) => setError(true));
+  }, [driver]);
+  
 
   useEffect(() => {
     if (driver) {
-      // Fetch vehicles from MongoDB using Fetch API
+      // Fetch drivers from MongoDB using Fetch API
       fetch(`http://localhost:4000/api/drivers/${driver}`)
         .then(response => {
           if (!response.ok) {
@@ -31,7 +44,7 @@ function Checker({ drivers }) {
     }
   }, [driver]);
 
-//console.log(driverInfo.Vehicles.make);
+console.log(driver);
 
   //Handling dropdown selection
   const handleChange = (event) => {
@@ -89,7 +102,7 @@ function handleNewDriver(){
       
       
      {/*  {Show vehicles once driver is selected } */}
-     {addNewDriver ? <Form addNewDriver={addNewDriver}/> : <div></div>}
+     {addNewDriver ? <Form addNewDriver={addNewDriver} driver={driver}/> : <div></div>}
       {driver ? <label className="yourVehiclesLabel">Your vehicles:</label> : null}
 
   

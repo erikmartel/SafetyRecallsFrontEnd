@@ -6,20 +6,8 @@ import { useState, useEffect } from "react";
 import React from "react";
 
 function App() {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState(false);
+  /* const [error, setError] = useState(false);
   const [drivers, setDrivers] = useState([])
-
-/*   useEffect(() => {
-    const url = `https://api.nhtsa.gov/recalls/recallsByVehicle?make=jeep&model=wrangler&modelYear=2023`;
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        setError(false);
-        setData(data);
-      })
-      .catch((error) => setError(true));
-  }, []);  */
 
   
   useEffect(() => {
@@ -33,16 +21,13 @@ function App() {
       })
       .catch((error) => setError(true));
   }, []);
-
-
-  console.log(data);
-
+ */
   return (
     <div className="App">
       <Header />
 
       <div className="appContainer">
-        <Checker drivers={drivers}/>
+        <Checker/>
       </div>
 
 

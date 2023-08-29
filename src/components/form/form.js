@@ -90,7 +90,7 @@ function Form() {
             />
             <button type="submit">Submit</button>
           </form>
-        </div>
+        </div> 
       </header>
     </div>
   );
