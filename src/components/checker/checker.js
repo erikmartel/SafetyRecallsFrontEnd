@@ -1,6 +1,7 @@
 import "./checker.css";
 import { useState, useEffect } from "react";
 import RecallCard from "../recallCard/recallCard";
+import Form from "../form/form";
 
 function Checker({ drivers }) {
   const [driver, setDriver] = useState(null);
@@ -8,6 +9,7 @@ function Checker({ drivers }) {
   const [driverInfo, setDriverInfo] = useState(null);
   const [error, setError] = useState(false);
   const [vehicleRecallData, setVehicleRecallData]=useState([])
+  const [addNewDriver, setAddNewDriver] = useState(false);
 
   //console.log(drivers);
 
@@ -57,6 +59,11 @@ function checkRecallsClick(index){
   })
   .catch((error) => setError(true));
 }
+
+function handleNewDriver(){
+  setAddNewDriver(!addNewDriver)
+  
+}
   
 
 
@@ -69,6 +76,7 @@ function checkRecallsClick(index){
       <label className="driverSelectorLabel" for="driverSelector">
         Who's driving?
       </label>
+    
 
       <form className="driverSelectorDropdown" id="driverSelector">
         <select className="dropdown" placeholder="Who's driving?" onChange={handleChange}>
@@ -80,13 +88,16 @@ function checkRecallsClick(index){
           ))}
         </select>
       </form>
+      <div><button className="addDriverButton" onClick={handleNewDriver}>{addNewDriver ? "Cancel" : "Add Driver"}</button></div>
       
       
      {/*  {Show vehicles once driver is selected } */}
+     {addNewDriver ? <Form addNewDriver={addNewDriver}/> : <div></div>}
       {driver ? <label className="yourVehiclesLabel">Your vehicles:</label> : null}
 
   
       {driver ? <div className='vehicleCardsGrid'> 
+     
           {
             driverInfo?.Vehicles.map((vehicle, index)=>{
               return(

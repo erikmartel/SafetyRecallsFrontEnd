@@ -1,7 +1,6 @@
 import "./App.css";
 import Header from "./components/header/header";
 import Checker from "./components/checker/checker";
-import Form from "./components/form/form";
 import { useState, useEffect } from "react";
 
 import React from "react";
@@ -44,7 +43,6 @@ function App() {
 
       <div className="appContainer">
         <Checker drivers={drivers}/>
-        <Form />
       </div>
 
 
