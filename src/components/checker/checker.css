@@ -1,3 +1,27 @@
+.addDriverButton{
+	padding: 10px 15px;
+	font-size: 14px;
+	text-align: center;
+	cursor: pointer;
+	outline: none;
+	color: #1A1446;
+	background-color: #99e5ea;
+	border: none;
+	border-radius: 7px;
+	box-shadow: 0 3px #28a3af;
+	font-weight: bold;
+	margin: 10px;
+}
+	  
+.addDriverButton:hover {background-color: #06748C; color:white}
+	  
+.addDriverButton:active {
+	background-color: #999;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
+
 .checkerContainer{
 	display: flex;
 	flex-direction:column;

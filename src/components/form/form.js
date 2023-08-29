@@ -37,7 +37,7 @@ function Form() {
     <div className="form-container">
       <header className="form-header">
         <div className="driver-form">
-          <form onSubmit={handleSubmit}>
+          <form className="form" onSubmit={handleSubmit}>
             <p>Driver First Name</p>
             <input
               className="Name"

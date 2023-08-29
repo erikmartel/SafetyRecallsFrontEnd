@@ -102,7 +102,7 @@ function handleNewDriver(){
       
       
      {/*  {Show vehicles once driver is selected } */}
-     {addNewDriver ? <Form addNewDriver={addNewDriver} driver={driver}/> : <div></div>}
+     {addNewDriver ? <div className="formContainer"><Form className="addDriverForm" addNewDriver={addNewDriver} driver={driver}/></div> : <div></div>}
       {driver ? <label className="yourVehiclesLabel">Your vehicles:</label> : null}
 
   
