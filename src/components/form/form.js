@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function Form() {
-  const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [modelYear, setModelYear] = useState("");
   const [make, setMake] = useState("");
   const [model, setModel] = useState("");
@@ -12,16 +12,26 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:4000/api/drivers/newDriver", {
-      first_name: firstname,
-      last_name: lastname,
-      modelyear: modelYear,
-      make: make,
-      model: model,
-    });
+    axios
+      .post("http://localhost:4000/api/drivers/newDriver", {
+        first_name: firstName,
+        last_name: lastName,
+        modelyear: modelYear,
+        make: make,
+        model: model,
+      })
+      .then(() => {
+        setFirstName("");
+        setLastName("");
+        setModelYear("");
+        setMake("");
+        setModel("");
+        console.log("success - user added!");
+      })
+      .catch(() => {
+        console.log("something went wrong!");
+      });
   };
-
-
 
   return (
     <div className="form-container">
@@ -36,6 +46,7 @@ function Form() {
               onChange={(e) => {
                 setFirstName(e.target.value);
               }}
+              value={firstName}
             />
             <p>Driver Last Name</p>
             <input
@@ -45,6 +56,7 @@ function Form() {
               onChange={(e) => {
                 setLastName(e.target.value);
               }}
+              value={lastName}
             />
             <p>Vehicle Year</p>
             <input
@@ -54,6 +66,7 @@ function Form() {
               onChange={(e) => {
                 setModelYear(e.target.value);
               }}
+              value={modelYear}
             />
             <p>Vehicle Make</p>
             <input
@@ -63,7 +76,8 @@ function Form() {
               onChange={(e) => {
                 setMake(e.target.value);
               }}
-            />{" "}
+              value={make}
+            />
             <p>Vehicle Model</p>
             <input
               className="VehicleInfo"
@@ -72,6 +86,7 @@ function Form() {
               onChange={(e) => {
                 setModel(e.target.value);
               }}
+              value={model}
             />
             <button type="submit">Submit</button>
           </form>

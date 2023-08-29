@@ -5,15 +5,12 @@ import Form from "../form/form";
 
 function Checker({ drivers }) {
   const [driver, setDriver] = useState(null);
-
   const [driverInfo, setDriverInfo] = useState(null);
-  const [error, setError] = useState(false);
-  const [vehicleRecallData, setVehicleRecallData]=useState([])
+  const [vehicleRecallData, setVehicleRecallData]=useState([]);
   const [addNewDriver, setAddNewDriver] = useState(false);
+  const [error, setError] = useState(false);
 
-  //console.log(drivers);
 
-//console.log(driver);
 
   useEffect(() => {
     if (driver) {
