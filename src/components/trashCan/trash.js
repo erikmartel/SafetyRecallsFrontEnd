@@ -1,7 +1,7 @@
 import './trash.css'
 import axios from "axios";
 
-function TrashCan ({driver, vehicleId}){
+function TrashCan ({driver, vehicleId, fetchVehicles}){
 
 function trashClick() {
     console.log(driver)
@@ -11,6 +11,7 @@ function trashClick() {
         })
         .then(() => {
         console.log("success - vehicle deleted!");
+        fetchVehicles();
         })
         .catch(() => {
         console.log("something went wrong!");

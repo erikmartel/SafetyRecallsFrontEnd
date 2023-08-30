@@ -2,7 +2,7 @@ import "./form.css";
 import React, { useState } from "react";
 import axios from "axios";
 
-function Form() {
+function Form({handleNewDriver, fetchDrivers}) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [modelYear, setModelYear] = useState("");
@@ -21,15 +21,18 @@ function Form() {
         model: model,
       })
       .then(() => {
+        handleNewDriver();
         setFirstName("");
         setLastName("");
         setModelYear("");
         setMake("");
         setModel("");
         console.log("success - user added!");
+        fetchDrivers();
       })
-      .catch(() => {
+      .catch((error) => {
         console.log("something went wrong!");
+        console.log(error)
       });
   };
 
@@ -61,7 +64,7 @@ function Form() {
             <p>Vehicle Year</p>
             <input
               className="VehicleInfo"
-              type="text"
+              type="number"
               placeholder="Year...."
               onChange={(e) => {
                 setModelYear(e.target.value);
