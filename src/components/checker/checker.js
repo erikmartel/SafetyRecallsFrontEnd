@@ -160,15 +160,20 @@ function Checker() {
             return (
               <div class="vehicleCard" key={index}>
                 <div class="vehicleContainer">
+                <div className="trashCanContainer">
+                  <div className="trashButton">
+                    <TrashCan
+                        fetchVehicles={fetchVehicles}
+                        vehicleId={vehicle._id}
+                        driver={driver}
+                      />
+                  </div>
+                  </div>
                   <h3 className="cardTitle">
                     {vehicle.modelYear} {vehicle.make} {vehicle.model}
                   </h3>
 
-                  <TrashCan
-                    fetchVehicles={fetchVehicles}
-                    vehicleId={vehicle._id}
-                    driver={driver}
-                  />
+                  
                   <div>
                     <img src="/images/carIcon.png" alt="carIcon" />
                   </div>
