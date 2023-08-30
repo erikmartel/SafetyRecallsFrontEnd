@@ -2,7 +2,7 @@ import "./addVehicleForm.css";
 import React, { useState } from "react";
 import axios from "axios";
 
-function AddVehicleForm({driver}) {
+function AddVehicleForm({driver, fetchVehicles, handleNewVehicle}) {
   const [modelYear, setModelYear] = useState("");
   const [make, setMake] = useState("");
   const [model, setModel] = useState("");
@@ -26,6 +26,8 @@ function AddVehicleForm({driver}) {
         setMake("");
         setModel("");
         console.log("success - user added!");
+        fetchVehicles();
+        handleNewVehicle();
       })
       .catch(() => {
         console.log("something went wrong!");
