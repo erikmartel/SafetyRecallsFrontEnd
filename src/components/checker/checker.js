@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import RecallCard from "../recallCard/recallCard";
 import Form from "../form/form";
 import AddVehicleForm from "../addVehicleForm/addVehicleForm";
+import TrashCan from "../trashCan/trash";
 
 function Checker() {
   const [driver, setDriver] = useState(null);
@@ -124,6 +125,8 @@ function handleNewVehicle(){
                 <div  class="vehicleCard" key={index}>
                   <div class="vehicleContainer">
                     <h3 className="cardTitle">{vehicle.modelYear} {vehicle.make} {vehicle.model}</h3>
+                    
+                    <TrashCan vehicleId={vehicle._id} driver={driver}/>
                     <div>
                     <img src="/images/carIcon.png" alt="carIcon" />
                     </div>

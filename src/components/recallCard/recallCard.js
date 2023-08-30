@@ -16,7 +16,7 @@ function RecallCard ({data}) {
                       <p className="recallCardSummary">
                       Summary: {data.Summary}
                       </p>
-                    <a className="cardLink" href="#">More Details</a>
+                    <a className="cardLink" target="_blank" href="https://www.nhtsa.gov/">More Details</a>
                     <br /> 
           </div>
           )
