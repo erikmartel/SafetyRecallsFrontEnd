@@ -13,6 +13,7 @@ function Checker() {
   const [error, setError] = useState(false);
   const [drivers, setDrivers] = useState([]);
   const [addNewVehicle, setAddNewVehicle] = useState(false);
+  const [toggleRecallCount, setToggleRecallCount] = useState(false);
 
   const fetchDrivers = () => {
     const driversUrl = `http://localhost:4000/api/drivers`;
@@ -59,6 +60,7 @@ function Checker() {
     setVehicleRecallData([]);
     console.log(driver);
     console.log(event.target.value);
+    setToggleRecallCount(false);
   };
 
   //handle recall click
@@ -72,18 +74,24 @@ function Checker() {
         setError(false);
         setVehicleRecallData(data);
         console.log(data);
+        handleToggleRecallCount();
       })
       .catch((error) => setError(true));
   }
 
   function handleNewDriver() {
     setAddNewDriver(!addNewDriver);
+    setToggleRecallCount(false);
   }
 
   function handleNewVehicle() {
     setAddNewVehicle(!addNewVehicle);
+    setToggleRecallCount(false);
   }
 
+  function handleToggleRecallCount() {
+    setToggleRecallCount(true);
+  }
   //Mapping driver names to dropdown from MongoDB
 
   return (
@@ -130,7 +138,6 @@ function Checker() {
       {/*  {Show vehicles once driver is selected } */}
       {driver ? (
         <div>
-          <label className="yourVehiclesLabel">Your vehicles:</label>
           <button className="addVehicleButton" onClick={handleNewVehicle}>
             {addNewVehicle ? "Close Vehicle Form" : "Add Vehicle"}
           </button>
@@ -181,7 +188,10 @@ function Checker() {
       )}
 
       <div className="recallListContainer">
-        <RecallCard
+      <div>
+         {toggleRecallCount ? <p className="recallCount">There are <b style={{color:'maroon'}}>{vehicleRecallData.Count} </b>recalls for the vehicle you selected.</p> : <div></div>}
+        </div> 
+        <RecallCard vehicleRecallData={vehicleRecallData}
           data={vehicleRecallData.results ? vehicleRecallData.results : []}
         />
       </div>

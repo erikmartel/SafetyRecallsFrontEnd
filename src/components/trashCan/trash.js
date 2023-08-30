@@ -20,7 +20,7 @@ function trashClick() {
 
     return(
         <div className="trashCanContainer">
-            <img classname="trash" src="/images/trash.png" alt="trashCanIcon" style={{width: 15, height: 15}} onClick={trashClick}/>
+            <img classname="trash" title="Remove this vehicle?" src="/images/trash.png" alt="trashCanIcon" style={{width: 15, height: 15}} onClick={trashClick}/>
         </div>
     )
 }

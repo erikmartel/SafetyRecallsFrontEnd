@@ -5,6 +5,7 @@ function RecallCard ({data}) {
     return(
         <>
       <><div class="recallCardContainer">
+
       {
          data.map((data)=>{
           return(
