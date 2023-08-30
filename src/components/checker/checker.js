@@ -103,10 +103,11 @@ function handleNewDriver(){
       
      {/*  {Show vehicles once driver is selected } */}
      {addNewDriver ? <div className="formContainer"><Form className="addDriverForm" addNewDriver={addNewDriver} driver={driver}/></div> : <div></div>}
-      {driver ? <label className="yourVehiclesLabel">Your vehicles:</label> : null}
+      {driver ? <div><label className="yourVehiclesLabel">Your vehicles:</label><button className="addDriverButton" onClick={handleNewDriver}>{addNewDriver ? "Close Form" : "Add Vehicle"}</button></div> : null}
 
   
-      {driver ? <div className='vehicleCardsGrid'> 
+      {driver ? 
+      <div className='vehicleCardsGrid'> 
      
           {
             driverInfo?.Vehicles.map((vehicle, index)=>{

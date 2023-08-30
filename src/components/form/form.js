@@ -88,7 +88,7 @@ function Form() {
               }}
               value={model}
             />
-            <button type="submit">Submit</button>
+            <button className="submitButton" type="submit">Submit</button>
           </form>
         </div> 
       </header>
