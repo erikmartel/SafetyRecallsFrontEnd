@@ -2,6 +2,7 @@ import "./checker.css";
 import { useState, useEffect } from "react";
 import RecallCard from "../recallCard/recallCard";
 import Form from "../form/form";
+import AddVehicleForm from "../addVehicleForm/addVehicleForm";
 
 function Checker() {
   const [driver, setDriver] = useState(null);
@@ -10,6 +11,7 @@ function Checker() {
   const [addNewDriver, setAddNewDriver] = useState(false);
   const [error, setError] = useState(false);
   const [drivers, setDrivers] = useState([])
+  const [addNewVehicle, setAddNewVehicle] = useState(false);
 
   //fetching all drivers from local database
   useEffect(() => {
@@ -76,6 +78,10 @@ function handleNewDriver(){
 }
   
 
+function handleNewVehicle(){
+  setAddNewVehicle(!addNewVehicle)
+}
+
 
 
 //Mapping driver names to dropdown from MongoDB
@@ -100,12 +106,15 @@ function handleNewDriver(){
       </form>
       <div><button className="addDriverButton" onClick={handleNewDriver}>{addNewDriver ? "Close Form" : "Add Driver"}</button></div>
       
-      
-     {/*  {Show vehicles once driver is selected } */}
-     {addNewDriver ? <div className="formContainer"><Form className="addDriverForm" addNewDriver={addNewDriver} driver={driver}/></div> : <div></div>}
-      {driver ? <div><label className="yourVehiclesLabel">Your vehicles:</label><button className="addDriverButton" onClick={handleNewDriver}>{addNewDriver ? "Close Form" : "Add Vehicle"}</button></div> : null}
+      {/* Show add driver form once add driver button is clicked*/}
+      {addNewDriver ? <div className="formContainer"><Form className="addDriverForm" addNewDriver={addNewDriver} driver={driver}/></div> : <div></div>}  
 
-  
+     {/*  {Show vehicles once driver is selected } */}
+      {driver ? <div><label className="yourVehiclesLabel">Your vehicles:</label><button className="addVehicleButton" onClick={handleNewVehicle}>{addNewVehicle ? "Close Vehicle Form" : "Add Vehicle"}</button></div> : null}
+
+      {/* Show add vehicle form once add vehicle button is clicked*/}
+      {addNewVehicle ? <div className="formContainer"> <AddVehicleForm driver = {driver}/></div> : <div></div>}
+
       {driver ? 
       <div className='vehicleCardsGrid'> 
      
