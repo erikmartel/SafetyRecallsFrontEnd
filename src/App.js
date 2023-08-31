@@ -33,7 +33,15 @@ function App() {
       <div className="recallData"></div>
       <div className="footer">
         <div className="yellowFooter"></div>
-        <div className="blueFooter"></div>
+        <div className="blueFooter">
+          <div className="copyRight">&copy; 2023 Safety Recall Checker</div> 
+          <div className="contactInfo">
+            Connect with us!<br></br>
+            Jacob Moore<br></br>
+            Dayna Tynan<br></br>
+            Erik Martel
+            </div> 
+        </div>
       </div>
     </div>
   );

@@ -39,37 +39,38 @@ function AddVehicleForm({driver, fetchVehicles, handleNewVehicle}) {
       <header className="vehicle-form-header">
         <div className="driver-form">
           <form className="form" onSubmit={handleSubmitVehicle}>
-            <p>Vehicle Year</p>
-            <input
-              className="VehicleInfo"
+          <div className="formItem">
+            <p>Vehicle Year:</p>
+            <input 
+              className="inputItem"
               type="text"
               placeholder="Year...."
               onChange={(e) => {
                 setModelYear(e.target.value);
               }}
               value={modelYear}
-            />
-            <p>Vehicle Make</p>
+            /></div>
+            <div className="formItem"><p>Vehicle Make:</p>
             <input
-              className="VehicleInfo"
+              className="inputItem"
               type="text"
               placeholder="Make...."
               onChange={(e) => {
                 setMake(e.target.value);
               }}
               value={make}
-            />
-            <p>Vehicle Model</p>
+            /></div>
+            <div className="formItem"><p>Vehicle Model:</p>
             <input
-              className="VehicleInfo"
+             className="inputItem"
               type="text"
               placeholder="Model...."
               onChange={(e) => {
                 setModel(e.target.value);
               }}
               value={model}
-            />
-            <button className="submitVehicleButton" type="submit">Add</button>
+            /></div>
+            <div className="submitButtonContainer"><button className="submitVehicleButton" type="submit">Add</button></div>
           </form>
         </div> 
       </header>

@@ -45,5 +45,23 @@
 
 .blueFooter{
 	background-color:#1A1446;
-	height: 65px;
+	height: 75px;
+	display:flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.copyRight{
+	color:#dddada;
+	display:flex;
+	margin-left: 20px;
+	align-items: center;
+}
+
+.contactInfo{
+	font-size:small;
+	color:#dddada;
+	display:flex;
+	align-items: center;
+	margin-right: 20px;
 }
