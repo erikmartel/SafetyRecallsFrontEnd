@@ -22,7 +22,6 @@
 }
 
 .appContainer{
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -30,34 +29,21 @@
 	margin: 30px 30px 30px 30px;
 	border-radius: 10px;;
 	background-color: #F5F5F5;
-
 }
 
-/* .checkerContainer{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-} */
-/* 
-.driverSelectorLabel{
-	padding: 2px;
-	color: #1A1446;
-	font-size: medium;
-	font-style: bolder;
-	display:flex;
-	justify-content: center;
-} */
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
 
-/* .driverSelectorDropdown{
-	margin-bottom: 3px;
+.yellowFooter{
+	background-color:#FFD000;
+	height: 10px;
+}
 
-} */
-
-/* .recallSubmitButton {
-	margin:15px;
-	background-color:#1AFFFF;
-	border-color: #06748C;
-	border-radius: 5px;
-} */
-
-
+.blueFooter{
+	background-color:#1A1446;
+	height: 65px;
+}

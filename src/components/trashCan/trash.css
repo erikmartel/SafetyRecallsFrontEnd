@@ -6,6 +6,7 @@
 .trashButton{
     padding: 3px;
     border-radius: 3px;
+    margin: 10px 10px -6px 0px;
 }
 .trashButton:hover{
     box-shadow: 2px 2px 2px rgb(221, 220, 220);

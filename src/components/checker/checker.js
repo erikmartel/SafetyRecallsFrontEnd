@@ -148,7 +148,11 @@ function Checker() {
       {addNewVehicle ? (
         <div className="formContainer">
           {" "}
-          <AddVehicleForm handleNewVehicle={handleNewVehicle} fetchVehicles={fetchVehicles} driver={driver} />
+          <AddVehicleForm
+            handleNewVehicle={handleNewVehicle}
+            fetchVehicles={fetchVehicles}
+            driver={driver}
+          />
         </div>
       ) : (
         <div></div>
@@ -159,21 +163,20 @@ function Checker() {
           {driverInfo?.Vehicles.map((vehicle, index) => {
             return (
               <div class="vehicleCard" key={index}>
-                <div class="vehicleContainer">
                 <div className="trashCanContainer">
                   <div className="trashButton">
                     <TrashCan
-                        fetchVehicles={fetchVehicles}
-                        vehicleId={vehicle._id}
-                        driver={driver}
-                      />
+                      fetchVehicles={fetchVehicles}
+                      vehicleId={vehicle._id}
+                      driver={driver}
+                    />
                   </div>
-                  </div>
+                </div>
+                <div class="vehicleContainer">
                   <h3 className="cardTitle">
                     {vehicle.modelYear} {vehicle.make} {vehicle.model}
                   </h3>
 
-                  
                   <div>
                     <img src="/images/carIcon.png" alt="carIcon" />
                   </div>
@@ -193,10 +196,19 @@ function Checker() {
       )}
 
       <div className="recallListContainer">
-      <div>
-         {toggleRecallCount ? <p className="recallCount">There are <b style={{color:'maroon'}}>{vehicleRecallData.Count} </b>recalls for the vehicle you selected.</p> : <div></div>}
-        </div> 
-        <RecallCard vehicleRecallData={vehicleRecallData}
+        <div>
+          {toggleRecallCount ? (
+            <p className="recallCount">
+              There are{" "}
+              <b style={{ color: "#d41111" }}>{vehicleRecallData.Count} </b>
+              recalls for the vehicle you selected.<br></br><br></br><hr></hr>
+            </p>
+          ) : (
+            <div></div>
+          )}
+        </div>
+        <RecallCard
+          vehicleRecallData={vehicleRecallData}
           data={vehicleRecallData.results ? vehicleRecallData.results : []}
         />
       </div>

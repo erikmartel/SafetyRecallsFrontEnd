@@ -27,11 +27,14 @@ function App() {
       <Header />
 
       <div className="appContainer">
-        <Checker/>
+        <Checker />
       </div>
 
-
       <div className="recallData"></div>
+      <div className="footer">
+        <div className="yellowFooter"></div>
+        <div className="blueFooter"></div>
+      </div>
     </div>
   );
 }
